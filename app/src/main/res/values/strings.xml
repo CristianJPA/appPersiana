@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Persiana Automatica</string>
+
+    <!--Strings ControlFragment-->
+    <string name="tituloView">Control</string>
+    <string name="btnArrowUp">ArrowUp</string>
+    <string name="btnStop">Stop</string>
+    <string name="btnArrowDown">ArrowDown</string>
+    <string name="estado">Estado Persiana</string>
+    <string name="arribaAbajo">(Arriba/Abajo)</string>
+    <!--Strings ControlFragment-->
+    <string name="tituloConfig">Configuración</string>
+    <string name="tv1">Automatizar mediante Voltaje:</string>
+    <string name="btnConfig">Configurar</string>
+    <string name="Rb1">Seleccionar</string>
+    <string name="tv2">Automatizar mediante horario:</string>
+    <string name="btnConfig2">Configurar</string>
+    <string name="Rb2">Seleccionar</string>
+    <!--Strings automFragment-->
+    <string name="tv3">Automatización</string>
+    <string name="tv4">Configuración Actual</string>
+    <string name="Subir">Subir: Mayor a _°</string>
+    <string name="Bajar">Bajar: Menor a _°</string>
+    <string name="tv5">Subir cuando:</string>
+    <string name="TMay">La temperatura sea mayor a:</string>
+    <string name="numb1"></string>
+    <string name="tv6">Bajar cuando:</string>
+    <string name="TMen">La temperatura sea menor a:</string>
+    <string name="numb2"></string>
+    <string name="btnGuardar">Guardar</string>
+    <!--Strings autom2Fragment-->
+    <string name="SubirV">Subir: Voltaje mayor a</string>
+    <string name="BajarV">Bajar: Voltaje menor a</string>
+    <string name="VMay">El voltaje sea mayor a:</string>
+    <string name="VMen">El voltaje sea menor a:</string>
+    <!--Strings Registro-->
+    <string name="tv7">Registros</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Strings Items SideBar-->
+    <string name="ControlItem">Control</string>
+    <string name="ConfigItem">Configuracion</string>
+    <string name="Registros">Registros</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

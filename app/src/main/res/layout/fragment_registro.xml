@@ -1,48 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv7"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_margin="60dp">
 
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv7"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TableLayout
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </TableLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+        <!--Columnas-->
+        <TableRow
+            android:background="@color/primary_dark">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/col0"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/col1"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+            />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/col2"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/col3"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                />
+        </TableRow>
+        <!--Table Data-->
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row1Num"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row1Voltaje"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row1Hora"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row1Fecha"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row2Num"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row2Voltaje"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row2Hora"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/row2Fecha"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

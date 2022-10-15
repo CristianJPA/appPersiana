@@ -16,18 +16,20 @@
     <string name="tv2">Automatizar mediante horario:</string>
     <string name="btnConfig2">Configurar</string>
     <string name="Rb2">Seleccionar</string>
+
     <!--Strings automFragment-->
     <string name="tv3">Automatización</string>
     <string name="tv4">Configuración Actual</string>
-    <string name="Subir">Subir: Mayor a _°</string>
-    <string name="Bajar">Bajar: Menor a _°</string>
+    <string name="Subir">Subir: 12:00 Hrs</string>
+    <string name="Bajar">Bajar: 22:00 Hrs</string>
     <string name="tv5">Subir cuando:</string>
-    <string name="TMay">La temperatura sea mayor a:</string>
+    <string name="TMay">Sean las:</string>
     <string name="numb1"></string>
     <string name="tv6">Bajar cuando:</string>
-    <string name="TMen">La temperatura sea menor a:</string>
+    <string name="TMen">Sean las:</string>
     <string name="numb2"></string>
     <string name="btnGuardar">Guardar</string>
+
     <!--Strings autom2Fragment-->
     <string name="SubirV">Subir: Voltaje mayor a</string>
     <string name="BajarV">Bajar: Voltaje menor a</string>
@@ -36,7 +38,24 @@
     <!--Strings Registro-->
     <string name="tv7">Registros</string>
 
+    <string name="seleccionado">seleccionado</string>
+    <string name="seleccionar">seleccionar</string>
 
+    <!--Strings Registro-->
+    <string name="col0">N°</string>
+    <string name="col1">Voltaje</string>
+    <string name="col2">Hora</string>
+    <string name="col3">Fecha</string>
+
+    <string name="row1Num">1</string>
+    <string name="row1Voltaje">700</string>
+    <string name="row1Hora">15:30</string>
+    <string name="row1Fecha">10/02/2022</string>
+
+    <string name="row2Num">2</string>
+    <string name="row2Voltaje">300</string>
+    <string name="row2Hora">18:00</string>
+    <string name="row2Fecha">05/06/2022</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -48,5 +67,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>

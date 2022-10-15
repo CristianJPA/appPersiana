@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fram1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConfiguracionFragment">
@@ -11,6 +12,30 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toEndOf="@+id/textView6">
+
+        <RadioGroup
+            android:id="@+id/rGroup"
+            android:layout_width="112dp"
+            android:layout_height="244dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnConfig2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnConfig1">
+
+            <RadioButton
+                android:id="@+id/rButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/seleccionar" />
+
+            <RadioButton
+                android:id="@+id/rButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:text="@string/seleccionar" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView2"
@@ -27,11 +52,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginBottom="181dp"
+            android:layout_marginTop="175dp"
             android:text="@string/tv1"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView6"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnConfig1"
@@ -43,45 +68,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
-            android:text="@string/Rb1"
-            app:layout_constraintEnd_toEndOf="@+id/radioButton2"
-            app:layout_constraintStart_toStartOf="@+id/radioButton2"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginBottom="332dp"
+            android:layout_marginTop="92dp"
             android:text="@string/tv2"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnConfig1" />
 
         <Button
             android:id="@+id/btnConfig2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="39dp"
             android:text="@string/btnConfig2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/Rb2"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

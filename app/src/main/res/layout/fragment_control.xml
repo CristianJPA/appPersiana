@@ -22,10 +22,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/btnUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="180dp"
+            android:background="@null"
             android:contentDescription="@string/btnArrowUp"
             android:src="@drawable/arrowup"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,50 +34,54 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/btnStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="24dp"
+            android:background="@null"
             android:contentDescription="@string/btnStop"
             android:src="@drawable/stop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/btnUp" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/btnDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="24dp"
+            android:background="@null"
+            android:clickable="true"
             android:contentDescription="@string/btnArrowDown"
             android:src="@drawable/arrowdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btnStop" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="488dp"
+            android:layout_marginTop="64dp"
             android:text="@string/estado"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDown" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="8dp"
             android:text="@string/arribaAbajo"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

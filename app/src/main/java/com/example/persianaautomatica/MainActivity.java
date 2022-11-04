@@ -15,11 +15,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button btnGuardar1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        //Pantalla de inicio
         TimerTask tarea = new TimerTask() {
             @Override
             public void run() {
@@ -37,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
         };
         Timer tiempo = new Timer();
         tiempo.schedule(tarea,2000);
-
+        // END Pantalla de inicio
     }
-
 
 }

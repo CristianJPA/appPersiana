@@ -17,6 +17,7 @@
             android:id="@+id/rGroup"
             android:layout_width="112dp"
             android:layout_height="244dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toTopOf="@+id/btnConfig2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="41dp"
+            android:layout_marginTop="25dp"
             android:text="@string/btnConfig"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -84,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="25dp"
             android:text="@string/btnConfig2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />

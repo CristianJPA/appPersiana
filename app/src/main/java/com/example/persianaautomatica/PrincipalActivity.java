@@ -7,20 +7,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class PrincipalActivity extends AppCompatActivity{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,17 +58,13 @@ public class PrincipalActivity extends AppCompatActivity{
                 return false;
             }
         });
+
         DrawerLayout dl = (DrawerLayout) findViewById(R.id.principal);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Que se muestre boton que permite desplegar DL
         getSupportActionBar().setHomeButtonEnabled(true); //Indica que el btn btnenabled exista
 
         //toggle permite que sidebar se oculte y se muestre a raiz del boton
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this,
-                dl,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        ); //toggle declarado
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,dl,R.string.navigation_drawer_open,R.string.navigation_drawer_close); //toggle declarado
         dl.addDrawerListener(toggle); //indicamos que drawer esta asociado a toggle
         toggle.syncState();
 
@@ -86,5 +81,7 @@ public class PrincipalActivity extends AppCompatActivity{
         });
 
     }
+
+
 
 }

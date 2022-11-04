@@ -52,48 +52,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
         <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/tv5"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView34"
-            app:layout_constraintTop_toBottomOf="@+id/textView34" />
-
-        <TextView
             android:id="@+id/textView36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="70dp"
             android:text="@string/VMay"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView35"
-            app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
-        <EditText
-            android:id="@+id/editTextNumber7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:width="30dp"
-            android:contentDescription="@string/numb1"
-            android:ems="10"
-            android:hint="00"
-            android:inputType="number"
-            android:maxLength="2"
-            app:layout_constraintStart_toStartOf="@+id/textView36"
-            app:layout_constraintTop_toBottomOf="@+id/textView36" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/tv6"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/editTextNumber7"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber7" />
+            app:layout_constraintStart_toStartOf="@+id/textView32"
+            app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
         <TextView
             android:id="@+id/textView37"
@@ -102,32 +68,42 @@
             android:layout_marginTop="20dp"
             android:text="@string/VMen"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView18"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-        <EditText
-            android:id="@+id/editTextNumber8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:width="30dp"
-            android:contentDescription="@string/numb2"
-            android:ems="10"
-            android:hint="00"
-            android:inputType="number"
-            android:maxLength="2"
-            app:layout_constraintStart_toStartOf="@+id/textView37"
-            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+            app:layout_constraintStart_toStartOf="@+id/etLuminosidad1"
+            app:layout_constraintTop_toBottomOf="@+id/etLuminosidad1" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnAutom1"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginTop="560dp"
+            android:layout_marginTop="500dp"
             android:text="@string/btnGuardar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etLuminosidad2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:width="120dp"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="3"
+            app:layout_constraintStart_toStartOf="@+id/textView37"
+            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+        <EditText
+            android:id="@+id/etLuminosidad1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:width="120dp"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="3"
+            app:layout_constraintStart_toStartOf="@+id/textView36"
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

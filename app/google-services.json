@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "294996170197",
+    "firebase_url": "https://primeraapp-83e4e-default-rtdb.firebaseio.com",
+    "project_id": "primeraapp-83e4e",
+    "storage_bucket": "primeraapp-83e4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294996170197:android:1a120c49a096226d02595c",
+        "android_client_info": {
+          "package_name": "com.example.persianaautomatica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294996170197-5gfliirik94tjl83406o3fdpgbjba8jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvu38Xbe0HoudFaZ2OUp5rSFhepB6a4Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294996170197-5gfliirik94tjl83406o3fdpgbjba8jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294996170197:android:0982be96505363ed02595c",
+        "android_client_info": {
+          "package_name": "com.example.primeraapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294996170197-5gfliirik94tjl83406o3fdpgbjba8jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvu38Xbe0HoudFaZ2OUp5rSFhepB6a4Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294996170197-5gfliirik94tjl83406o3fdpgbjba8jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

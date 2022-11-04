@@ -10,7 +10,7 @@
     <string name="arribaAbajo">(Arriba/Abajo)</string>
     <!--Strings ControlFragment-->
     <string name="tituloConfig">Configuración</string>
-    <string name="tv1">Automatizar mediante Voltaje:</string>
+    <string name="tv1">Automatizar mediante luminosidad:</string>
     <string name="btnConfig">Configurar</string>
     <string name="Rb1">Seleccionar</string>
     <string name="tv2">Automatizar mediante horario:</string>
@@ -22,19 +22,19 @@
     <string name="tv4">Configuración Actual</string>
     <string name="Subir">Subir: 12:00 Hrs</string>
     <string name="Bajar">Bajar: 22:00 Hrs</string>
-    <string name="tv5">Subir cuando:</string>
-    <string name="TMay">Sean las:</string>
+    <string name="tv5">Hora de Subida:</string>
     <string name="numb1"></string>
-    <string name="tv6">Bajar cuando:</string>
-    <string name="TMen">Sean las:</string>
+    <string name="tv6">Hora de Bajada:</string>
+
     <string name="numb2"></string>
     <string name="btnGuardar">Guardar</string>
 
     <!--Strings autom2Fragment-->
-    <string name="SubirV">Subir: Voltaje mayor a</string>
-    <string name="BajarV">Bajar: Voltaje menor a</string>
-    <string name="VMay">El voltaje sea mayor a:</string>
-    <string name="VMen">El voltaje sea menor a:</string>
+    <string name="SubirV">Subir:</string>
+    <string name="BajarV">Bajar:</string>
+    <string name="VMay">Luminosidad mayor a:</string>
+    <string name="VMen">Luminosidad menor a:</string>
+
     <!--Strings Registro-->
     <string name="tv7">Registros</string>
 

@@ -7,6 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.persianaautomatica.Modelo.Horario;
+import com.example.persianaautomatica.Modelo.Luminosidad;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +22,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class AutomFragment extends Fragment{
-
+    Button btnAutom2;
+    EditText etTHoraSubida,etTHoraBajada;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +68,27 @@ public class AutomFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_autom, container, false);
+        View v =  inflater.inflate(R.layout.fragment_autom, container, false);
+        etTHoraBajada = (EditText) v.findViewById(R.id.etTHoraBajada);
+        etTHoraSubida = (EditText) v.findViewById(R.id.etTHoraSubida);
+        btnAutom2 = (Button) v.findViewById(R.id.btnAutom2);
+
+        btnAutom2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "otro", Toast.LENGTH_SHORT).show();
+                insertar();
+            }
+        });
+        return v;
+    }
+
+    private void insertar() {
+        String horaBajada = etTHoraBajada.getText().toString();
+        String horaSubida = etTHoraSubida.getText().toString();
+        Horario h = new Horario(horaBajada,horaSubida);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Horario");
+        myRef.setValue(h);
     }
 }

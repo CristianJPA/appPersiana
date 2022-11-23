@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.persianaautomatica.Modelo.Luminosidad;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 public class Autom2Fragment extends Fragment {
     Button btnAutom1;
     EditText etLuminosidad1,etLuminosidad2;
+    TextView tvMostrarLumSubida, tvMostrarLumBajada;
     FirebaseDatabase database;
     ArrayList<Luminosidad> listado;
     ArrayAdapter<Luminosidad> adaptadorListado;
@@ -47,7 +49,8 @@ public class Autom2Fragment extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_autom2, container, false);
         //lvLuminosidad = (ListView) v.findViewById(R.id.lvLuminosidad);
         cargarDatos();
-
+        tvMostrarLumSubida = (TextView) v.findViewById(R.id.tvMostrarLumSubida);
+        tvMostrarLumBajada = (TextView) v.findViewById(R.id.tvMostrarLumBajada);
         //insertar valores
         etLuminosidad1 = (EditText) v.findViewById(R.id.etLuminosidad1);
         etLuminosidad2 = (EditText) v.findViewById(R.id.etLuminosidad2);
@@ -71,17 +74,10 @@ public class Autom2Fragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listado = new ArrayList<>();
                 System.out.println("LUMINOSIDAD "+snapshot);
-                for (DataSnapshot d: snapshot.getChildren()) {
-                    System.out.println("LUMINOSIDAD2 "+d);
-                    int luminosidadSubida = Integer.parseInt(d.child("luminosidadSubida").getValue().toString());
-                    int luminosidadBajada = Integer.parseInt(d.child("luminosidadBajada").getValue().toString());
-
-                    Luminosidad l = new Luminosidad(luminosidadSubida,luminosidadBajada);
-                    listado.add(l);
-
-                }
-                AdaptadorLuminosidad adaptador = new AdaptadorLuminosidad(getContext(),listado);
-                lvLuminosidad.setAdapter(adaptador);
+                String MostrarLumSubida = snapshot.child("luminosidadSubida").getValue().toString();
+                String MostrarLumBajada = snapshot.child("luminosidadBajada").getValue().toString();
+                tvMostrarLumSubida.setText(MostrarLumSubida);
+                tvMostrarLumBajada.setText(MostrarLumBajada);
             }
 
             @Override

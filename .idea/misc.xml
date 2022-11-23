@@ -6,13 +6,15 @@
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/activity_control.xml" value="0.25" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/activity_main.xml" value="0.2269021739130435" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/activity_principal.xml" value="0.264" />
-        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_autom.xml" value="0.264" />
+        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_autom.xml" value="0.4" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_autom2.xml" value="0.264" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_configuracion.xml" value="0.25" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_control.xml" value="0.264" />
-        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_registro.xml" value="0.4" />
+        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/fragment_registro.xml" value="0.264" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/header.xml" value="0.2269021739130435" />
-        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/items_listview.xml" value="0.6" />
+        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/items_listview.xml" value="0.4" />
+        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/items_listviewhorario.xml" value="0.2965811965811966" />
+        <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/items_listviewluminosidad.xml" value="0.4" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/layout/toolbar.xml" value="0.264" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/menu/menu.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Crist/AndroidStudioProjects/PersianaAutomatica/app/src/main/res/mipmap-anydpi-v26/down.xml" value="0.26" />

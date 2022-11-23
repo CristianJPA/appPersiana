@@ -2,78 +2,56 @@ package com.example.persianaautomatica;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.persianaautomatica.Modelo.Luminosidad;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Autom2Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class Autom2Fragment extends Fragment {
     Button btnAutom1;
     EditText etLuminosidad1,etLuminosidad2;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    FirebaseDatabase database;
+    ArrayList<Luminosidad> listado;
+    ArrayAdapter<Luminosidad> adaptadorListado;
+    ListView lvLuminosidad;
+    DatabaseReference luminosidadRef;
 
     public Autom2Fragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Autom2Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Autom2Fragment newInstance(String param1, String param2) {
-        Autom2Fragment fragment = new Autom2Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_autom2, container, false);
+        //lvLuminosidad = (ListView) v.findViewById(R.id.lvLuminosidad);
+        cargarDatos();
 
+        //insertar valores
         etLuminosidad1 = (EditText) v.findViewById(R.id.etLuminosidad1);
         etLuminosidad2 = (EditText) v.findViewById(R.id.etLuminosidad2);
-
         btnAutom1 = (Button) v.findViewById(R.id.btnAutom1);
-
         btnAutom1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +60,37 @@ public class Autom2Fragment extends Fragment {
             }
         });
         return v;
+        //
+    }
+
+    public ArrayList<Luminosidad> cargarDatos() {
+        database = FirebaseDatabase.getInstance();
+        luminosidadRef = database.getReference("Luminosidad");
+        ValueEventListener luminosidadListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listado = new ArrayList<>();
+                System.out.println("LUMINOSIDAD "+snapshot);
+                for (DataSnapshot d: snapshot.getChildren()) {
+                    System.out.println("LUMINOSIDAD2 "+d);
+                    int luminosidadSubida = Integer.parseInt(d.child("luminosidadSubida").getValue().toString());
+                    int luminosidadBajada = Integer.parseInt(d.child("luminosidadBajada").getValue().toString());
+
+                    Luminosidad l = new Luminosidad(luminosidadSubida,luminosidadBajada);
+                    listado.add(l);
+
+                }
+                AdaptadorLuminosidad adaptador = new AdaptadorLuminosidad(getContext(),listado);
+                lvLuminosidad.setAdapter(adaptador);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("Hubo un error");
+            }
+        };
+        luminosidadRef.addValueEventListener(luminosidadListener);
+        return listado;
     }
 
     public void insertar(){

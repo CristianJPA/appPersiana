@@ -20,8 +20,8 @@
     <!--Strings automFragment-->
     <string name="tv3">Automatización</string>
     <string name="tv4">Configuración Actual</string>
-    <string name="Subir">Subir: 12:00 Hrs</string>
-    <string name="Bajar">Bajar: 22:00 Hrs</string>
+    <string name="Subir">Subir:</string>
+    <string name="Bajar">Bajar:</string>
     <string name="tv5">Hora de Subida:</string>
     <string name="numb1"></string>
     <string name="tv6">Hora de Bajada:</string>

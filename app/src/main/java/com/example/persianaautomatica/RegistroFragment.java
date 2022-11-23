@@ -1,6 +1,5 @@
 package com.example.persianaautomatica;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -28,7 +26,7 @@ public class RegistroFragment extends Fragment {
     ArrayList<Registro> listado;
     ArrayAdapter<Registro> adaptadorListado;
     ListView lvRegistro;
-
+    DatabaseReference registroRef;
 
     public RegistroFragment() {
         // Required empty public constructor
@@ -39,31 +37,31 @@ public class RegistroFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_registro, container, false);
+        lvRegistro = (ListView) v.findViewById(R.id.lvRegistro);
+        cargarDatos();
+        return v;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_registro, container, false);
-        lvRegistro = (ListView) v.findViewById(R.id.lvRegistros);
-        Adaptador adaptador = new Adaptador(getContext(),cargarDatos());
-        lvRegistro.setAdapter(adaptador);
 
-        return v;
-    }
 
     public ArrayList<Registro> cargarDatos() {
         database = FirebaseDatabase.getInstance();
-        DatabaseReference registroRef = database.getReference("Registro");
-        listado = new ArrayList<>();
+        registroRef = database.getReference("Registro");
+
         ValueEventListener registroListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listado = new ArrayList<>();
                 System.out.println("REGISTROS "+snapshot);
                 for (DataSnapshot d: snapshot.getChildren()) {
                     System.out.println("REGISTRO"+d);
@@ -73,12 +71,15 @@ public class RegistroFragment extends Fragment {
                     String fecha = d.child("Fecha").getValue().toString();
                     Registro r = new Registro(id, voltaje, hora, fecha);
                     listado.add(r);
-                    System.out.println(r);
+                    //System.out.println(r);
                 }
+                Adaptador adaptador = new Adaptador(getContext(),listado);
+                lvRegistro.setAdapter(adaptador);
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                System.out.println("Un error");
+                System.out.println("Hubo un error");
             }
         };
         registroRef.addValueEventListener(registroListener);

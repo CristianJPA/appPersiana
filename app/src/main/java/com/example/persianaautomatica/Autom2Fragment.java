@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +23,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.spec.ECField;
 import java.util.ArrayList;
 
 public class Autom2Fragment extends Fragment {
+    private static final String TAG = "hola";
     Button btnAutom1;
     EditText etLuminosidad1,etLuminosidad2;
     TextView tvMostrarLumSubida, tvMostrarLumBajada;
@@ -48,6 +51,7 @@ public class Autom2Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_autom2, container, false);
         //lvLuminosidad = (ListView) v.findViewById(R.id.lvLuminosidad);
+
         cargarDatos();
         tvMostrarLumSubida = (TextView) v.findViewById(R.id.tvMostrarLumSubida);
         tvMostrarLumBajada = (TextView) v.findViewById(R.id.tvMostrarLumBajada);
@@ -60,42 +64,52 @@ public class Autom2Fragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getContext(), "otro", Toast.LENGTH_SHORT).show();
                 insertar();
+                etLuminosidad1.setText("");
+                etLuminosidad2.setText("");
             }
         });
         return v;
-        //
+
     }
 
     public ArrayList<Luminosidad> cargarDatos() {
-        database = FirebaseDatabase.getInstance();
-        luminosidadRef = database.getReference("Luminosidad");
-        ValueEventListener luminosidadListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listado = new ArrayList<>();
-                System.out.println("LUMINOSIDAD "+snapshot);
-                String MostrarLumSubida = snapshot.child("luminosidadSubida").getValue().toString();
-                String MostrarLumBajada = snapshot.child("luminosidadBajada").getValue().toString();
-                tvMostrarLumSubida.setText(MostrarLumSubida);
-                tvMostrarLumBajada.setText(MostrarLumBajada);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                System.out.println("Hubo un error");
+            database = FirebaseDatabase.getInstance();
+            luminosidadRef = database.getReference("Luminosidad");
+            ValueEventListener luminosidadListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    listado = new ArrayList<>();
+            try {
+                    System.out.println("LUMINOSIDAD "+snapshot);
+                    String MostrarLumSubida = snapshot.child("luminosidadSubida").getValue().toString();
+                    String MostrarLumBajada = snapshot.child("luminosidadBajada").getValue().toString();
+                    tvMostrarLumSubida.setText(MostrarLumSubida);
+                    tvMostrarLumBajada.setText(MostrarLumBajada);
+            }catch (Exception e){
+                System.out.println("no hay datos");
+
             }
-        };
-        luminosidadRef.addValueEventListener(luminosidadListener);
-        return listado;
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    System.out.println("Hubo un error");
+                }
+            };
+            luminosidadRef.addValueEventListener(luminosidadListener);
+            return listado;
+
     }
 
     public void insertar(){
+            int luminosidadSub = Integer.parseInt(etLuminosidad1.getText().toString());
+            int luminosidadBaj = Integer.parseInt(etLuminosidad2.getText().toString());
+            Luminosidad l = new Luminosidad(luminosidadSub,luminosidadBaj);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Luminosidad");
+            myRef.setValue(l);
         // Write a message to the database
-        int luminosidadSub = Integer.parseInt(etLuminosidad1.getText().toString());
-        int luminosidadBaj = Integer.parseInt(etLuminosidad2.getText().toString());
-        Luminosidad l = new Luminosidad(luminosidadSub,luminosidadBaj);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Luminosidad");
-        myRef.setValue(l);
+
     }
 }

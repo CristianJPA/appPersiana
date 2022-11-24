@@ -63,6 +63,8 @@ public class RegistroFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listado = new ArrayList<>();
                 System.out.println("REGISTROS "+snapshot);
+                try {
+
                 for (DataSnapshot d: snapshot.getChildren()) {
                     System.out.println("REGISTRO"+d);
                     String id = d.child("Id").getValue().toString();
@@ -72,6 +74,9 @@ public class RegistroFragment extends Fragment {
                     Registro r = new Registro(id, voltaje, hora, fecha);
                     listado.add(r);
                     //System.out.println(r);
+                }
+                }catch (Exception e){
+                    System.out.println("error");
                 }
                 Adaptador adaptador = new Adaptador(getContext(),listado);
                 lvRegistro.setAdapter(adaptador);

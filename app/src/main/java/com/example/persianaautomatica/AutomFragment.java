@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,8 +55,6 @@ public class AutomFragment extends Fragment{
         cargarDatos();
         tvMostrarSubida = (TextView) v.findViewById(R.id.tvMostrarSubida);
         tvMostrarBajada = (TextView) v.findViewById(R.id.tvMostrarBajada);
-        //etMostrarBajada = (EditText) v.findViewById(R.id.etMostrarBajada);
-        //etMostrarSubida = (EditText) v.findViewById(R.id.etMostrarSubida);
         etTHoraBajada = (EditText) v.findViewById(R.id.etTHoraBajada);
         etTHoraSubida = (EditText) v.findViewById(R.id.etTHoraSubida);
         btnAutom2 = (Button) v.findViewById(R.id.btnAutom2);
@@ -65,10 +64,13 @@ public class AutomFragment extends Fragment{
             public void onClick(View view) {
                 Toast.makeText(getContext(), "otro", Toast.LENGTH_SHORT).show();
                 insertar();
+              //  etMostrarSubida.setText("");
+               // etMostrarBajada.setText("");
             }
         });
         return v;
     }
+
 
     public ArrayList<Horario> cargarDatos() {
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA");
@@ -78,15 +80,16 @@ public class AutomFragment extends Fragment{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listado = new ArrayList<>();
+                try {
                 System.out.println("HORARIO "+snapshot);
-
                 String mostrarSubida = snapshot.child("horarioSubida").getValue().toString();
                 String mostrarBajada = snapshot.child("horarioBajada").getValue().toString();
-
-                //etMostrarSubida.setText(mostrarSubida);
-                //etMostrarBajada.setText(mostrarBajada);
                 tvMostrarSubida.setText(mostrarSubida);
                 tvMostrarBajada.setText(mostrarBajada);
+
+                }catch (Exception e){
+                    System.out.println("no hay datos");
+                }
 
             }
 

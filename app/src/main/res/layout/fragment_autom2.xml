@@ -14,11 +14,11 @@
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="16dp"
             android:text="@string/BajarV"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView33"
-            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvMostrarLumBajada"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView31"
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="90dp"
             android:text="@string/tv4"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,71 +45,75 @@
             android:id="@+id/textView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
             android:text="@string/SubirV"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView32"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvMostrarLumSubida"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="39dp"
             android:text="@string/VMay"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView32"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:text="@string/VMen"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/etLuminosidad1"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLuminosidad1" />
 
         <Button
             android:id="@+id/btnAutom1"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="40dp"
             android:text="@string/btnGuardar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/etLuminosidad2" />
 
         <EditText
             android:id="@+id/etLuminosidad2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
             android:width="120dp"
             android:ems="10"
             android:inputType="number"
-            android:maxLength="3"
-            app:layout_constraintStart_toStartOf="@+id/textView37"
+            android:maxLength="4"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
         <EditText
             android:id="@+id/etLuminosidad1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
             android:width="120dp"
             android:ems="10"
             android:inputType="number"
-            android:maxLength="3"
-            app:layout_constraintStart_toStartOf="@+id/textView36"
+            android:maxLength="4"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
         <TextView
             android:id="@+id/tvMostrarLumSubida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="20dp"
             android:text="Sin Datos"
             android:textSize="16sp"
@@ -120,7 +124,7 @@
             android:id="@+id/tvMostrarLumBajada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="30dp"
             android:text="Sin Datos"
             android:textSize="16sp"

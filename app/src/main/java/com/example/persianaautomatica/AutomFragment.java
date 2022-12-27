@@ -64,8 +64,8 @@ public class AutomFragment extends Fragment{
             public void onClick(View view) {
                 Toast.makeText(getContext(), "otro", Toast.LENGTH_SHORT).show();
                 insertar();
-              //  etMostrarSubida.setText("");
-               // etMostrarBajada.setText("");
+                /*etMostrarSubida.setText("");
+                etMostrarBajada.setText("");*/
             }
         });
         return v;

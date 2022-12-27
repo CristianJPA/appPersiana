@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="90dp"
             android:text="@string/tv4"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="35dp"
             android:width="120dp"
             android:text="@string/tv5"
             android:textSize="16sp"
@@ -95,13 +95,11 @@
             android:id="@+id/btnAutom2"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginTop="182dp"
-            android:layout_marginBottom="181dp"
+            android:layout_marginTop="36dp"
             android:text="@string/btnGuardar"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/etTHoraBajada" />
 
         <EditText
             android:id="@+id/etTHoraBajada"

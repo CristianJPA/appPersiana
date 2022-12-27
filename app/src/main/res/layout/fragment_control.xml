@@ -17,7 +17,6 @@
             android:text="@string/tituloView"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +24,7 @@
             android:id="@+id/btnUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="150dp"
             android:background="@null"
             android:contentDescription="@string/btnArrowUp"
             android:src="@drawable/arrowup"
@@ -41,8 +40,7 @@
             android:background="@null"
             android:contentDescription="@string/btnStop"
             android:src="@drawable/stop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btnUp"
             app:layout_constraintTop_toBottomOf="@+id/btnUp" />
 
         <ImageButton
@@ -54,8 +52,7 @@
             android:clickable="true"
             android:contentDescription="@string/btnArrowDown"
             android:src="@drawable/arrowdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btnStop"
             app:layout_constraintTop_toBottomOf="@+id/btnStop" />
 
         <TextView
@@ -66,7 +63,6 @@
             android:text="@string/estado"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnDown" />
 
@@ -75,12 +71,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
             android:text="@string/arribaAbajo"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
